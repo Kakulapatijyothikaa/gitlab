@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form" onsubmit="formValidation()" autocomplete="off">
+        <label for="">Password</label>
+        <input type="password"id="pass">
+        <input type="submit">
+    </form>
+    <script>
+        function formValidation(){
+            let pass = document.getElementById("pass").value;
+            if(pass == "") {
+                alert("password must not be empty")
+                return false;
+            }
+            if(pass.length<8) {
+                alert("password length must be 8 characters")
+                return false;
+            }
+            if(pass.search(/[0-9]/)==-1) {
+                alert("password must contain atleast one number")
+                return false;
+            }
+            if(pass.search(/[A-Z]/)==-1) {
+                alert("password must contain one upper case letter")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
